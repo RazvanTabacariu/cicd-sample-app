@@ -1,20 +1,20 @@
 #!/bin/bash
 set -euo pipefail
 
-mkdir cicd-sample-app/tempdir
-mkdir cicd-sample-app/tempdir/templates
+mkdir cicd-sample-app/cicd-sample-app/tempdir
+mkdir cicd-sample-app/cicd-sample-app/tempdir/templates
 mkdir cicd-sample-app/tempdir/static
 
 cp sample_app.py tempdir/.
-cp -r cicd-sample-app/templates/* cicd-sample-app/tempdir/templates/.
-cp -r cicd-sample-app/static/* cicd-sample-app/tempdir/static/.
+cp -r cicd-sample-app/cicd-sample-app/templates/* cicd-sample-app/cicd-sample-app/tempdir/templates/.
+cp -r cicd-sample-app/cicd-sample-app/static/* cicd-sample-app/cicd-sample-app/tempdir/static/.
 
 cat > tempdir/Dockerfile << _EOF_
 FROM python
 RUN pip install flask
-COPY  cicd-sample-app/static /home/myapp/static/
-COPY  cicd-sample-app/templates /home/myapp/templates/
-COPY  cicd-sample-app/sample_app.py /home/myapp/
+COPY  cicd-sample-app/cicd-sample-app/static /home/myapp/static/
+COPY  cicd-sample-app/cicd-sample-app/templates /home/myapp/templates/
+COPY  cicd-sample-app/cicd-sample-app/sample_app.py /home/myapp/
 EXPOSE 5050
 CMD python /home/myapp/sample_app.py
 _EOF_
