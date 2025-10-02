@@ -6,8 +6,8 @@ mkdir cicd-sample-app/tempdir/templates
 mkdir cicd-sample-app/tempdir/static
 
 cp sample_app.py tempdir/.
-cp -r cicd-sample-app/cicd-sample-app/templates/* cicd-sample-app/cicd-sample-app/tempdir/templates/.
-cp -r cicd-sample-app/cicd-sample-app/static/* cicd-sample-app/cicd-sample-app/tempdir/static/.
+cp -r cicd-sample-app/cicd-sample-app/templates/* cicd-sample-app/tempdir/templates/.
+cp -r cicd-sample-app/cicd-sample-app/static/* cicd-sample-app/tempdir/static/.
 
 cat > tempdir/Dockerfile << _EOF_
 FROM python
