@@ -1,8 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-mkdir cicd-sample-app/cicd-sample-app/tempdir
-mkdir cicd-sample-app/cicd-sample-app/tempdir/templates
+mkdir cicd-sample-app/tempdir
+mkdir cicd-sample-app/tempdir/templates
 mkdir cicd-sample-app/tempdir/static
 
 cp sample_app.py tempdir/.
