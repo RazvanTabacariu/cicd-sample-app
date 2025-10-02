@@ -1,13 +1,13 @@
 #!/bin/bash
 set -euo pipefail
 
-mkdir tempdir
-mkdir tempdir/templates
-mkdir tempdir/static
+mkdir cicd-sample-app/tempdir
+mkdir cicd-sample-app/tempdir/templates
+mkdir cicd-sample-app/tempdir/static
 
 cp sample_app.py tempdir/.
-cp -r templates/* tempdir/templates/.
-cp -r static/* tempdir/static/.
+cp -r cicd-sample-app/templates/* cicd-sample-app/tempdir/templates/.
+cp -r cicd-sample-app/static/* cicd-sample-app/tempdir/static/.
 
 cat > tempdir/Dockerfile << _EOF_
 FROM python
